@@ -43,6 +43,11 @@
     opacity: 1;
 }
 
+.sidebar-option.active {
+    background-color: #fff0ed;
+    border-color: tomato;
+}
+
 @media (max-width: 900px) {
     .sidebar {
         width: 70px;
