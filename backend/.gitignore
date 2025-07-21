@@ -13,8 +13,5 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-# Uploads (if user-generated or temporary)
-backend/uploads/
-
 # VS Code settings (optional)
 .vscode/
