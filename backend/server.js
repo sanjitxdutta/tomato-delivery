@@ -10,7 +10,7 @@ dotenv.config();
 
 //  app config
 const app = express();
-const port = "https://tomato-delivery-backend-62wn.onrender.com";
+const port = const port = process.env.PORT || 4000 ;
 
 //  middleware
 app.use(express.json());
