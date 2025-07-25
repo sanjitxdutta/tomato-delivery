@@ -31,7 +31,9 @@ const Verify = () => {
 
 
     useEffect(() => {
-        verifyPayment();
+        setTimeout(() => {
+            verifyPayment();
+        }, 1200);
     }, []);
 
     return (
