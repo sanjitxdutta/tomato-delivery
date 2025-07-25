@@ -14,13 +14,21 @@ const Verify = () => {
     const { url } = useContext(StoreContext);
 
     const verifyPayment = async () => {
+    try {
+        console.log("Verifying orderId:", orderId, "success:", success);
         const response = await axios.post(url + "/api/order/verify", { orderId, success });
+        console.log("Verify Response:", response.data);
         if (response.data.success) {
-            navigate("/myorders");
+          navigate("/myorders");
         } else {
-            navigate("/");
+          navigate("/");
         }
+    } catch (error) {
+        console.error("Error verifying payment:", error);
+        navigate("/");
     }
+}
+
 
     useEffect(() => {
         verifyPayment();
