@@ -71,9 +71,11 @@ npm install
 ```bash
 npm run dev
 ```
-Vite will run the server, typically on http://localhost:5173.
-Make sure the backend is also running and accessible. The default API URL is configured in App.jsx:
+- Vite will run the server, typically on http://localhost:5173.
+- Make sure the backend is also running and accessible. The default API URL is configured in App.jsx:
+```bash
 const url = "https://tomato-delivery-backend.com"
+```
 
 ---
 
