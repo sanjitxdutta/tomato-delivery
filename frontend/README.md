@@ -1,12 +1,114 @@
-# React + Vite
+# 🍽️ Tomato - Food Ordering Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend interface of a **Food Ordering System**, enabling customers to browse meals, manage cart items, and place orders. Built with **React**, **Vite**, and **Context API**, this project is optimized for speed, modularity, and real-time interaction with the backend API.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 📁 Folder Structure
 
-## Expanding the ESLint configuration
+```bash
+frontend/
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── ExploreMenu/
+│   │   ├── FoodDisplay/
+│   │   ├── FoodItem/
+│   │   ├── Header/
+│   │   ├── Navbar/
+│   │   ├── Footer/
+│   │   ├── LoginPopup/
+│   │   └── PlaceOrder/
+│   ├── context/
+│   │   └── StoreContext.jsx
+│   ├── pages/
+│   │   ├── Cart/
+│   │   ├── Home/
+│   │   ├── MyOrders/
+│   │   ├── PlaceOrder/
+│   │   └── Verify/
+│   ├── App.jsx
+│   ├── index.css
+│   ├── main.jsx
+├── .gitignore
+├── package.json
+├── vite.config.js
+└── README.md
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Features
+
+- 🔍 Explore menu by category
+- 🛒 Add to Cart with quantity controls
+- 📦 Place orders with delivery info
+- ✅ Payment verification (Stripe/Razorpay compatible structure)
+- 📃 View order history
+- 🔐 Simple login popup with token-based auth
+- 📊 Context API-powered global state for cart and user
+
+---
+
+## 🧪 Tech Stack
+
+| Tech             | Purpose                          |
+|------------------|----------------------------------|
+| React + Vite     | UI framework & fast bundler      |
+| Context API      | Global state management          |
+| React Router DOM | Routing between pages            |
+| Axios            | API requests                     |
+| CSS              | Styling                          |
+| Node/Express     | (Backend - assumed integration)  |
+
+---
+
+## 🚀 How to Run
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/sanjitxdutta/tomato-delivery.git
+cd frontend
+```
+
+### 2. Install Dependencies
+
+```bash
+npm install
+```
+
+### 3. Start Development Server
+
+```bash
+npm run dev
+```
+- Vite will run the server, typically on http://localhost:5173.
+- Make sure the backend is also running and accessible. The default API URL is configured in App.jsx:
+```bash
+const url = "https://tomato-delivery-backend.com"
+```
+
+---
+
+## 🧠 Context API (StoreContext.jsx)
+- The app uses StoreContext to manage:
+- food_list: All fetched food items
+- cartItems: Items added to cart
+- addToCart(), removeFromCart(): Cart control
+- getTotalCartAmount(): Billing logic
+- token, setToken: Auth token for user
+- url: Base URL for backend
+
+---
+
+## 🔒 Auth & Token
+The login popup sets a token on success. Token is saved in localStorage and used in API headers for:
+- Orders
+- User-specific requests
+
+---
+
+## 📄 License
+MIT License © 2025 Sanjit Dutta
